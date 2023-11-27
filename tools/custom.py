@@ -43,7 +43,7 @@ def parse_args():
     
     parser.add_argument('--a', help='pidnet-s, pidnet-m or pidnet-l', default='pidnet-s', type=str)
     parser.add_argument('--c', help='cityscapes pretrained or not', type=bool, default=True)
-    parser.add_argument('--p', help='dir for pretrained model', default="C:\\best.pt", type=str)
+    parser.add_argument('--p', help='dir for pretrained model', default="./best.pt", type=str)
     parser.add_argument('--r', help='root or dir for input images', default='./samples/', type=str)
     parser.add_argument('--t', help='the format of input images (.jpg, .png, ...)', default='.jpg', type=str)     
 
