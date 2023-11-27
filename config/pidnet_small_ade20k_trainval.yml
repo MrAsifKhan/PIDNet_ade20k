@@ -1,0 +1,54 @@
+CUDNN:
+  BENCHMARK: true
+  DETERMINISTIC: false
+  ENABLED: true
+GPUS: (0,)
+OUTPUT_DIR: 'output_small_colab'
+LOG_DIR: 'logs_small_colab'
+WORKERS: 2
+PRINT_FREQ: 100
+
+DATASET:
+  DATASET: ade20k
+  ROOT: "C:\\Users\\asifk\\Documents\\ML4CV\\ADE20K"
+  OBJECT_PATH: "C:\\Users\\asifk\\Documents\\ML4CV\\ADE20K\\objectInfo150.txt"
+  NUM_CLASSES: 21
+MODEL:
+  NAME: pidnet_s
+  NUM_OUTPUTS: 2 # 2 for ohem
+  PRETRAINED: "C:\\Users\\asifk\\Documents\\ML4CV\\PIDNet-main\\output_small_colab\\ade20k\\pidnet_small_ade20k_trainval\\original\\checkpoint.pth.tar"
+LOSS:
+  USE_OHEM: true 
+  OHEMTHRES: 0.9
+  OHEMKEEP: 131072
+  BALANCE_WEIGHTS: [1,1]
+  SB_WEIGHTS: 1.0
+TRAIN:
+  IMAGE_SIZE:
+  - 512  
+  - 512
+  BASE_SIZE: 1024
+  BATCH_SIZE_PER_GPU: 4
+  SHUFFLE: true
+  BEGIN_EPOCH: 0
+  END_EPOCH: 25
+  RESUME: true
+  OPTIMIZER: sgd
+  LR: 0.0001
+  WD: 0.005
+  MOMENTUM: 0.9
+  NESTEROV: true
+  FLIP: false
+  MULTI_SCALE: true
+  IGNORE_LABEL: 255
+  SCALE_FACTOR: 16
+TEST:
+  IMAGE_SIZE:
+  - 512
+  - 512
+  BASE_SIZE: 1024
+  BATCH_SIZE_PER_GPU: 2
+  FLIP_TEST: false
+  MULTI_SCALE: true
+  MODEL_FILE: ''
+  OUTPUT_INDEX: 1
