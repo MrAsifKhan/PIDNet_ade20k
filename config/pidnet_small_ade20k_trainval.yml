@@ -10,13 +10,13 @@ PRINT_FREQ: 100
 
 DATASET:
   DATASET: ade20k
-  ROOT: "C:\\ADE20K"
-  OBJECT_PATH: "C:\\ADE20K\\objectInfo150.txt"
+  ROOT: "./ADE20K"
+  OBJECT_PATH: "./ADE20K/objectInfo150.txt"
   NUM_CLASSES: 21
 MODEL:
   NAME: pidnet_s
   NUM_OUTPUTS: 2 # 2 for ohem
-  PRETRAINED: "C:\\checkpoint.pth.tar"
+  PRETRAINED: "./checkpoint.pth.tar"
 LOSS:
   USE_OHEM: true 
   OHEMTHRES: 0.9
