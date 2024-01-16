@@ -3,6 +3,10 @@ Fine tuning PIDNet on ADE20k dataset
 ## Training
 To train the PIDNet on ADE20k dataset, edit the configuration file accordingly specifing the dataset path and other parameters
 
+```bash
+python tools/train.py --cfg config/pidnet_small_ade20k_trainval.yml
+```
+
 ## Inference
 To infer PIDNet, run the custom.py file present in tools folder.
 
