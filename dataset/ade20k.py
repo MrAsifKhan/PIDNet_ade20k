@@ -41,8 +41,6 @@ class ADE20K(BaseDataset):
         self.multi_scale = multi_scale
         self.flip = flip
         self.upper_limit = 150 # actual classes in ADE20K dataset
-
-        self.class_weights = torch.FloatTensor([    ]).cuda()
         
         if mode == 'train':
             print("Train ::")
